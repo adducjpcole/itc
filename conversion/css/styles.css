@@ -1,7 +1,7 @@
-@import url(./default.css);
-@import url(./utilities.css);
+@import url(/.shared/css/reset.css);
+@import url(/.shared/css/utilities.css);
 
-@layer default, base, components, utilities;
+@layer reset, base, components, utilities;
 
 @layer base {
   #root {
