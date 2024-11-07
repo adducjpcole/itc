@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "target": "ES2022",
+    "checkJs": true,
+    "baseUrl": ".",
+  },
+  "include": ["**/*.js", "./.shared/js/**/*.js"],
+  "exclude": ["node_modules", "**/dist"]
+}
