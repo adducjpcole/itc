@@ -4,28 +4,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Income Tax Calculator</title>
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
 
   <body>
-    <h1>Income Tax Calculator</h1>
-    <div id="card">
-      <input
-        name="income"
-        type="number"
-        value="0"
-        data-bind-value
-        data-bind-js-name="in_income"
-      />
-      <output
-        for="income"
-        type="number"
-        data-bind-text
-        data-bind-js-name="out_income"
-      >
-        Something went wrong.
-      </output>
-    </div>
+    <main id="root">
+      <h1>Income Tax Calculator</h1>
+
+      <form class="card">
+        <input
+          class="text-center"
+          name="income"
+          type="number"
+          value="0"
+          data-bind-value
+          data-bind-js-name="in_income"
+        />
+        <span>=</span>
+        <output
+          class="text-center"
+          for="income"
+          type="number"
+          data-bind-text
+          data-bind-js-name="out_income"
+        >
+          Something went wrong.
+        </output>
+      </form>
+    </main>
 
     <script src="/.shared/js/dataBinding.js"></script>
     <script src="./js/main.js"></script>
