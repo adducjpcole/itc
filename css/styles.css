@@ -1,0 +1,24 @@
+@import url(/.shared/css/reset.css);
+@import url(/.shared/css/utilities.css);
+
+@layer reset, base, components, utilities;
+
+@layer base {
+  body {
+    overflow: hidden;
+    margin: 0px;
+  }
+
+  iframe {
+    z-index: -1;
+    resize: both;
+  }
+
+  footer {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: auto;
+  }
+}
