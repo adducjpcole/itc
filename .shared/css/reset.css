@@ -1,11 +1,25 @@
 @layer reset {
-  * {
-    outline: none;
+  iframe {
+    display: block;
+    border: unset;
   }
 
-  output {
-    margin: auto;
-    display: inline-block;
+  *,
+  *::before,
+  *::after {
+    outline: none;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: unset;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
   }
 
   input[type='number'] {
@@ -19,5 +33,30 @@
     -moz-appearance: none;
     appearance: none;
     margin: 0;
+  }
+
+  output {
+    margin: auto;
+    display: inline-block;
+  }
+
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
