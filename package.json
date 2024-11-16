@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "lint": "eslint . && npx tsc -p jsconfig.json",
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
+    "dev": "npx live-server .",
+    "build@conv": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/conversion/index.html > ./build/bundle.html",
+    "build@fact": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/factorial-sum-and-average/index.html > ./build/bundle.html",
+    "build@inco": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/income-tax-calculator/index.html > ./build/bundle.html",
+    "build@simp": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/simple-payroll/index.html > ./build/bundle.html"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.14.0",
+    "@html-eslint/eslint-plugin": "^0.27.0",
+    "@html-eslint/parser": "^0.27.0",
+    "eslint": "^8.57.1",
+    "globals": "^15.12.0",
+    "prettier": "^3.1.0",
+    "prettier-eslint": "^16.1.2"
+  }
+}

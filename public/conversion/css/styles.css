@@ -1,0 +1,67 @@
+@import url('https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@master/fonts.css');
+
+@layer reset, base, components, utilities;
+
+@layer base {
+  #root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  form select[name="formula"] {
+    font-size: medium;
+  }
+
+  #form__number-view {
+    display: grid;
+    grid-template-columns: 4fr 1fr 4fr;
+    margin-top: 1rem;
+  }
+
+  #form__number-view * {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  #form__number-view input,
+  #form__number-view output {
+    border: 1px solid black;
+    padding: 0.25rem 0;
+  }
+
+  #form__number-view output {
+    background-color: #eeeeee;
+  }
+
+  output[for="formula"] {
+    margin-top: 1rem;
+    margin-left: 0;
+  }
+
+  #formula-output__highlight {
+    font-size: small;
+    margin-right: 1rem;
+  }
+}
+
+@layer components {
+  .card {
+    border: 1px solid black;
+    border-radius: 0.4em;
+    padding: 1.25em;
+  }
+
+  .separator {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+}

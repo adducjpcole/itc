@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Unit Converter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link inline rel="stylesheet" href="../shared/css/reset.css" />
+    <link inline rel="stylesheet" href="../shared/css/utilities.css" />
+    <link inline rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <main id="root">
+      <h1>Unit Converter</h1>
+
+      <form class="card">
+        <select name="formula">
+          <optgroup label="Temperature">
+            <option value="( %d * 9 / 5 ) + 32">Celsius to Fahrenheit</option>
+            <option value="( %d - 32 ) * 5 / 9">Fahrenheit to Celsius</option>
+          </optgroup>
+          <optgroup label="Length">
+            <option value="%d * 3.281">Meters to Feet</option>
+            <option value="%d / 3.281">Feet to Meters</option>
+          </optgroup>
+        </select>
+
+        <div id="form__number-view">
+          <input name="number" class="text-center" type="number" value="0" />
+          <span class="text-center">=</span>
+          <output name="number-output" for="number" class="text-center">
+            Something went wrong.
+          </output>
+        </div>
+
+        <output name="formula-output" for="formula">
+          <span
+            id="formula-output__highlight"
+            class="text-highlight text-center"
+          >
+            Formula
+          </span>
+          <span class="font-cmu-serif text-center">
+            Something went wrong.
+          </span>
+        </output>
+      </form>
+    </main>
+
+    <script inline src="./js/binaryTree.js"></script>
+    <script inline src="./js/main.js"></script>
+  </body>
+</html>

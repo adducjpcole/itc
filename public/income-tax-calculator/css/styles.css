@@ -1,0 +1,24 @@
+@layer reset, base, components, utilities;
+
+@layer base {
+  #root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+
+  form,
+  output,
+  input {
+    outline: none;
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,26 @@
+@layer reset, base, components, utilities;
+
+@layer base {
+  body {
+    overflow: hidden;
+    margin: 0;
+  }
+
+  iframe {
+    z-index: -1;
+    resize: none;
+  }
+
+  footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    bottom: -100px;
+  }
+
+  footer.show {
+    bottom: 0;
+  }
+}
