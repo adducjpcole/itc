@@ -4,28 +4,19 @@ window.addEventListener('load', () => {
   const iframe = document.querySelector('iframe');
   if (!iframe) throw new Error('Cannot find an iframe');
 
-  // Capture mousemove
-  const onmousemove = (/** @type {MouseEvent} */ ev) => {
-    if (ev.clientY > window.innerHeight * 0.95) {
-      console.log('bottom!');
-    }
-  };
-
-  window.addEventListener('mousemove', onmousemove);
-  iframe.contentWindow?.addEventListener('mousemove', onmousemove);
-
-  // Capture resize
-  window.addEventListener('resize', () => iframeResize(iframe));
-  iframeResize(iframe);
+  setListeners_iframe(iframe);
 });
 
-const iframeResize = GLOBAL_debounce(
-  /**
-   * @param {HTMLIFrameElement} iframe
-   */
-  (iframe) => {
+/**
+ * @param {HTMLIFrameElement} iframe
+ */
+function setListeners_iframe(iframe) {
+  const onresize = GLOBAL_debounce(() => {
     iframe.width = window.innerWidth.toString();
     iframe.height = window.innerHeight.toString();
-  },
-  250,
-);
+  }, 250);
+
+  window.addEventListener('resize', onresize);
+
+  onresize();
+}
