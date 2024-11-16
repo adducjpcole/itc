@@ -5,6 +5,17 @@ window.addEventListener('load', () => {
   if (!iframe) throw new Error('Cannot find an iframe');
 
   setListeners_iframe(iframe);
+
+  const anchors = /** @type {NodeListOf<HTMLAnchorElement>}*/ (
+    document.querySelectorAll('a[trap]')
+  );
+  for (const a of anchors) {
+    a.addEventListener('click', (ev) => {
+      ev.preventDefault();
+
+      iframe.src = a.href;
+    });
+  }
 });
 
 /**
