@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Factorial, Sum, and Average</title>
+    <link inline rel="stylesheet" href="../shared/css/reset.css" />
+    <link inline rel="stylesheet" href="../shared/css/utilities.css" />
+    <link inline rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <main id="root">
+      <h1>Factorial, Sum, and Average</h1>
+
+      <form class="card">
+        <input class="text-center" name="integer" type="number" value="0" />
+        <span> Factorial: </span>
+        <output
+          class="text-center"
+          name="fac"
+          for="integer"
+          type="number"
+        >
+          Something went wrong.
+        </output>
+        <span> Sum: </span>
+        <output class="text-center" name="sum" for="integer" type="number">
+          Something went wrong.
+        </output>
+        <span> Average: </span>
+        <output class="text-center" name="avg" for="integer" type="number">
+          Something went wrong.
+        </output>
+      </form>
+    </main>
+
+    <script inline src="../shared/js/dataBinding.js"></script>
+    <script inline src="./js/main.js"></script>
+  </body>
+</html>
