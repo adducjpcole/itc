@@ -7,7 +7,7 @@ window.addEventListener('load', () => {
   setListeners_iframe(iframe);
 
   const anchors = /** @type {NodeListOf<HTMLAnchorElement>}*/ (
-    document.querySelectorAll('a[trap]')
+    document.querySelectorAll('a[data-trap]')
   );
   for (const a of anchors) {
     a.addEventListener('click', (ev) => {
