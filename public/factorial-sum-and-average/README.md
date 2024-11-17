@@ -1,4 +1,4 @@
-# Nth Factorial, Sum and Average
+# Factorial, Sum and Average
 
 Write a JavaScript script (in 1 HTML File) that will input an integer value n and display (upon a button click) the following:
 
