@@ -10,7 +10,7 @@
 
 window.addEventListener('load', () => {
   const employeeName = /** @type {HTMLInputElement?} */ (
-    document.getElementById('employee_name')
+    document.getElementById('employee-name')
   );
   if (!employeeName) throw new Error('Something went wrong');
 
@@ -21,21 +21,21 @@ window.addEventListener('load', () => {
   );
 
   document
-    .getElementById('form--create_entry')
+    .getElementById('form--create-entry')
     ?.addEventListener('submit', (ev) => {
       ev.preventDefault();
 
       const daysWorked = /** @type {HTMLInputElement?} */ (
-        document.getElementById('days_worked')
+        document.getElementById('days-worked')
       );
       const dailyRate = /** @type {HTMLInputElement?} */ (
-        document.getElementById('daily_rate')
+        document.getElementById('daily-rate')
       );
       const deductionAmount = /** @type {HTMLInputElement?} */ (
-        document.getElementById('deduction_amount')
+        document.getElementById('deduction-amount')
       );
       const table = /** @type {HTMLTableElement?} */ (
-        document.getElementById('table--payroll_table')
+        document.getElementById('table--payroll-table')
       );
       if (!(daysWorked && dailyRate && deductionAmount && table))
         throw new Error('Something went wrong');
@@ -53,15 +53,15 @@ window.addEventListener('load', () => {
     });
 
   document
-    .getElementById('form--delete_entry')
+    .getElementById('form--delete-entry')
     ?.addEventListener('submit', (ev) => {
       ev.preventDefault();
 
       const deleteLineNumber = /** @type {HTMLInputElement?} */ (
-        document.getElementById('delete_line_number')
+        document.getElementById('delete-line-number')
       );
       const table = /** @type {HTMLTableElement?} */ (
-        document.getElementById('table--payroll_table')
+        document.getElementById('table--payroll-table')
       );
       if (!(table && deleteLineNumber)) throw new Error('Something went wrong');
 
