@@ -1,7 +1,7 @@
 {
   "scripts": {
     "lint": "eslint . && npx tsc -p jsconfig.json",
-    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json}\"",
+    "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,html,css}\"",
     "dev": "npx live-server .",
     "build@conv": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/conversion/index.html > ./build/bundle.html",
     "build@fact": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/factorial-sum-and-average/index.html > ./build/bundle.html",
