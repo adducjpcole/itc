@@ -17,6 +17,13 @@ window.addEventListener('load', () => {
     a.addEventListener('click', (ev) => {
       ev.preventDefault();
 
+      for (const otherAnchor of anchors) {
+        if (otherAnchor === a) continue;
+
+        otherAnchor.classList.remove('selected');
+      }
+      a.classList.add('selected');
+
       iframe.src = a.href;
     });
   }
