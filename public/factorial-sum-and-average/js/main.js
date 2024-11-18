@@ -2,35 +2,33 @@
 
 window.addEventListener('load', () => {
   const inp = document.querySelector('input');
-  if (!inp) throw new Error('Cannot find an input');
-
-  const outFac = /** @type {HTMLInputElement} */ (
+  const out_fac = /** @type {HTMLOutputElement|null} */ (
     document.querySelector('output[name="fac"]')
   );
-  const outSum = /** @type {HTMLInputElement} */ (
+
+  const out_sum = /** @type {HTMLOutputElement|null} */ (
     document.querySelector('output[name="sum"]')
   );
-  const outAvg = /** @type {HTMLInputElement} */ (
+  const out_avg = /** @type {HTMLOutputElement|null} */ (
     document.querySelector('output[name="avg"]')
   );
 
-  /**
-   * @param {number} num
-   */
-  function setDisplay(num) {
-    outFac.value = calcFactorial(num).toString();
+  if (!inp || !out_fac || !out_sum || !out_avg)
+    throw new Error('Something went wrong');
 
-    const sum = calcSum(num);
-    outSum.value = sum.toString();
+  const setDisplay = () => {
+    const n = inp.value.length > 0 ? Number(inp.value) : 0;
 
-    outAvg.value = num === 0 ? '0' : (sum / num).toString();
-  }
+    out_fac.value = calcFactorial(n).toString();
 
-  inp.addEventListener('input', () =>
-    setDisplay(inp.value.length > 0 ? Number(inp.value) : 0),
-  );
+    const sum = calcSum(n);
+    out_sum.value = sum.toString();
 
-  setDisplay(0);
+    out_avg.value = calcAvg(n).toString();
+  };
+  setDisplay();
+
+  inp.addEventListener('input', setDisplay);
 });
 
 /**
@@ -38,7 +36,9 @@ window.addEventListener('load', () => {
  */
 function calcFactorial(n) {
   let ans = n;
-  while (n > 1 && Number.isFinite(ans)) ans *= --n;
+  while (n > 1 && Number.isFinite(ans)) {
+    ans *= --n;
+  }
 
   return ans;
 }
@@ -53,4 +53,18 @@ function calcSum(n) {
   } while (n > 0);
 
   return sum;
+}
+
+/**
+ * @param {number} n
+ */
+function calcAvg(n) {
+  if (n === 0) return 0;
+
+  let sum = n;
+  for (let i = 1; i < n; i++) {
+    sum += i;
+  }
+
+  return sum / n;
 }
