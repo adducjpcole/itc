@@ -9,14 +9,22 @@
  */
 
 window.addEventListener('load', () => {
+  const employeeName = /** @type {HTMLInputElement?} */ (
+    document.getElementById('employee_name')
+  );
+  if (!employeeName) throw new Error('Something went wrong');
+
+  // Remove trailing and leading spaces.
+  employeeName.addEventListener(
+    'input',
+    () => (employeeName.value = employeeName.value.trim()),
+  );
+
   document
     .getElementById('form--create_entry')
     ?.addEventListener('submit', (ev) => {
       ev.preventDefault();
 
-      const employeeName = /** @type {HTMLInputElement?} */ (
-        document.getElementById('employee_name')
-      );
       const daysWorked = /** @type {HTMLInputElement?} */ (
         document.getElementById('days_worked')
       );
@@ -26,13 +34,11 @@ window.addEventListener('load', () => {
       const deductionAmount = /** @type {HTMLInputElement?} */ (
         document.getElementById('deduction_amount')
       );
-      if (!(employeeName && daysWorked && dailyRate && deductionAmount))
-        throw new Error('Something went wrong.');
-
       const table = /** @type {HTMLTableElement?} */ (
         document.getElementById('table--payroll_table')
       );
-      if (!table) throw new Error('Something went wrong');
+      if (!(daysWorked && dailyRate && deductionAmount && table))
+        throw new Error('Something went wrong');
 
       const tbody = table.tBodies[0];
       tbody.appendChild(
@@ -54,14 +60,21 @@ window.addEventListener('load', () => {
       const deleteLineNumber = /** @type {HTMLInputElement?} */ (
         document.getElementById('delete_line_number')
       );
-      if (!deleteLineNumber) throw new Error('Something went wrong');
-
       const table = /** @type {HTMLTableElement?} */ (
         document.getElementById('table--payroll_table')
       );
       if (!(table && deleteLineNumber)) throw new Error('Something went wrong');
 
-      deleteTableRow(table.tBodies[0], Number(deleteLineNumber.value) - 1);
+      const tbody = table.tBodies[0];
+      const deleteLineNumber_value = Number(deleteLineNumber.value);
+      if (
+        deleteLineNumber_value < 0 ||
+        deleteLineNumber_value > tbody.rows.length
+      ) {
+        throw new RangeError('Line number out of bounds.');
+      }
+
+      deleteTableRow(tbody, deleteLineNumber_value - 1);
     });
 });
 
