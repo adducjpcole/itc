@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Income Tax Calculator</title>
-    <link inline rel="stylesheet" href="../shared/css/reset.css"/>
+    <link inline rel="stylesheet" href="../shared/css/reset.css" />
     <link inline rel="stylesheet" href="../shared/css/utilities.css" />
     <link inline rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -14,28 +14,14 @@
       <h1>Income Tax Calculator</h1>
 
       <form class="card">
-        <input
-          class="text-center"
-          name="income"
-          type="number"
-          value="0"
-          data-bind-value
-          data-bind-js-name="in_income"
-        />
+        <input class="text-center" name="income" type="number" value="0" />
         <span>=</span>
-        <output
-          class="text-center"
-          for="income"
-          type="number"
-          data-bind-text
-          data-bind-js-name="out_income"
-        >
+        <output class="text-center" name="tax" for="income" type="number">
           Something went wrong.
         </output>
       </form>
     </main>
 
-    <script inline src="../shared/js/dataBinding.js"></script>
     <script inline src="./js/main.js"></script>
   </body>
 </html>

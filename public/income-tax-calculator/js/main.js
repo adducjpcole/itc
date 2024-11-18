@@ -1,21 +1,20 @@
 'use strict';
 
 window.addEventListener('load', () => {
-  displayIncomeTax();
+  const inp = document.querySelector('input');
+  const out = document.querySelector('output');
+  if (!inp || !out) throw new Error('Something went wrong');
 
-  BOUND_VALUE['in_income'].element().addEventListener('input', () => {
-    displayIncomeTax();
-  });
+  const setDisplay = () => {
+    out.value = getIncomeTax(Number(inp.value)).toLocaleString('en-PH', {
+      style: 'currency',
+      currency: 'PHP',
+    });
+  };
+  setDisplay();
+
+  inp.addEventListener('input', setDisplay);
 });
-
-function displayIncomeTax() {
-  BOUND_TEXT['out_income'].set(
-    getIncomeTax(Number(BOUND_VALUE['in_income'].get())).toLocaleString(
-      'en-PH',
-      { style: 'currency', currency: 'PHP' },
-    ),
-  );
-}
 
 /**
  * Calculates the income tax (basic tax + rate) based on the taxable income.
