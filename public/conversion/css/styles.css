@@ -17,7 +17,7 @@
     width: 50%;
   }
 
-  form select[name="formula"] {
+  form select[name='formula'] {
     font-size: medium;
   }
 
@@ -42,7 +42,7 @@
     background-color: #eeeeee;
   }
 
-  output[for="formula"] {
+  output[for='formula'] {
     margin-top: 1rem;
     margin-left: 0;
   }

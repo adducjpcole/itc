@@ -21,7 +21,7 @@
     width: 15rem;
   }
 
-  input[name="integer"] {
+  input[name='integer'] {
     border: 1px solid black;
     grid-area: 1 / span 2;
     width: 100%;

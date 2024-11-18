@@ -18,16 +18,39 @@
 
         <form id="form--create_entry" autocomplete="off">
           <label for="employee_name">Employee Name</label>
-          <input name="employee_name" id="employee_name" type="text" />
+          <input
+            name="employee_name"
+            id="employee_name"
+            type="text"
+            value="Juan dela Cruz"
+          />
 
           <label for="days_worked">Days Worked</label>
-          <input name="days_worked" id="days_worked" type="number" />
+          <input
+            name="days_worked"
+            id="days_worked"
+            type="number"
+            min="0"
+            value="30"
+          />
 
           <label for="daily_rate">Daily Rate</label>
-          <input name="daily_rate" id="daily_rate" type="number" />
+          <input
+            name="daily_rate"
+            id="daily_rate"
+            type="number"
+            min="0"
+            value="615"
+          />
 
           <label for="deduction_amount">Deduction Amount</label>
-          <input name="deduction_amount" id="deduction_amount" type="number" />
+          <input
+            name="deduction_amount"
+            id="deduction_amount"
+            type="number"
+            min="0"
+            value="0"
+          />
 
           <button type="submit">Submit</button>
         </form>
@@ -48,13 +71,16 @@
               <th scope="col">Net Pay</th>
             </tr>
           </thead>
-          <tbody>
-          </tbody>
+          <tbody></tbody>
         </table>
 
         <form id="form--delete_entry" autocomplete="off">
           <label for="delete_line_number">Delete Line Number</label>
-          <input type="number" name="delete_line_number" id="delete_line_number" />
+          <input
+            type="number"
+            name="delete_line_number"
+            id="delete_line_number"
+          />
           <button type="submit">Delete</button>
         </form>
       </section>
