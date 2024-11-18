@@ -1,0 +1,75 @@
+@layer reset, base, components, utilities;
+
+@layer base {
+  #root {
+    margin: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 2fr 5fr;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  #root h1 {
+    grid-column: span 2;
+  }
+
+  form,
+  output,
+  input {
+    outline: none;
+    font-size: 1rem;
+  }
+
+  #form--create_entry {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #form--delete_entry {
+    margin: 1rem 0;
+  }
+
+  button[type="submit"] {
+    grid-column: 2;
+  }
+
+  table,
+  th,
+  td {
+    border: 1px solid black;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+  }
+
+  td input,
+  td output {
+    width: 100%;
+  }
+
+  thead th,
+  tfoot th {
+    color: #fff;
+    background-color: #282c34;
+  }
+}
+
+@layer components {
+  .card {
+    border: 1px solid black;
+    border-radius: 0.4em;
+    padding: 1.25em;
+  }
+
+  .card>h2 {
+    margin: 0 0 1.5rem 0;
+  }
+}

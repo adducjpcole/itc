@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Simple Payroll</title>
+    <link inline rel="stylesheet" href="../shared/css/reset.css" />
+    <link inline rel="stylesheet" href="../shared/css/utilities.css" />
+    <link inline rel="stylesheet" href="./css/styles.css" />
+  </head>
+
+  <body>
+    <main id="root">
+      <h1 class="text-center">Simple Payroll</h1>
+
+      <section class="card">
+        <h2>Create Entry</h2>
+
+        <form id="form--create_entry" autocomplete="off">
+          <label for="employee_name">Employee Name</label>
+          <input name="employee_name" id="employee_name" type="text" />
+
+          <label for="days_worked">Days Worked</label>
+          <input name="days_worked" id="days_worked" type="number" />
+
+          <label for="daily_rate">Daily Rate</label>
+          <input name="daily_rate" id="daily_rate" type="number" />
+
+          <label for="deduction_amount">Deduction Amount</label>
+          <input name="deduction_amount" id="deduction_amount" type="number" />
+
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2>Payroll Table</h2>
+
+        <table id="table--payroll_table">
+          <thead>
+            <tr>
+              <th scope="col">No.</th>
+              <th scope="col">Employee Name</th>
+              <th scope="col">Days Worked</th>
+              <th scope="col">Daily Rate</th>
+              <th scope="col">Gross Pay</th>
+              <th scope="col">Deduction Amount</th>
+              <th scope="col">Net Pay</th>
+            </tr>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+
+        <form id="form--delete_entry" autocomplete="off">
+          <label for="delete_line_number">Delete Line Number</label>
+          <input type="number" name="delete_line_number" id="delete_line_number" />
+          <button type="submit">Delete</button>
+        </form>
+      </section>
+    </main>
+
+    <script inline src="./js/main.js"></script>
+  </body>
+</html>
