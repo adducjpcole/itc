@@ -2,12 +2,14 @@
 
 @layer base {
   #root {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
     margin: 1rem;
     display: grid;
     gap: 1rem;
     grid-template-columns: 2fr 5fr;
     justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
   }
 
   #root h1 {
@@ -22,13 +24,13 @@
     font-size: 1rem;
   }
 
-  #form--create_entry {
+  #form--create-entry {
     display: grid;
     gap: 1rem;
     grid-template-columns: 1fr 1fr;
   }
 
-  #form--delete_entry {
+  #form--delete-entry {
     margin: 1rem 0;
   }
 
