@@ -2,36 +2,40 @@
 
 window.addEventListener('load', () => {
   const form = document.getElementsByTagName('form')[0];
-
-  function setNumberView() {
-    form['number'].value = parseFloat(form['number'].value);
-
-    const expr = form['formula'].value.replace('%d', form['number'].value);
-    const binaryTreeHead = GLOBAL_BinaryTree.fromInfix(expr);
-
-    form['number-output'].value = parseFloat(
-      GLOBAL_BinaryTree.evaluate(binaryTreeHead).toFixed(4),
-    );
-  }
-
-  function setFormulaView() {
-    form['formula-output'].children[1].innerText = form['formula'].value
-      .replace('%d', form['number'].value)
-      .replace('( ', '(')
-      .replace(' )', ')');
-  }
+  form.addEventListener('submit', (ev) => ev.preventDefault());
 
   function setView() {
-    setNumberView();
-    setFormulaView();
-  }
+    form['number'].value = parseFloat(form['number'].value);
 
-  form.addEventListener('keydown', (ev) => {
-    if (ev.key === 'Enter') ev.preventDefault();
-  });
+    form['number-output'].value = getNumberOutput(
+      form['formula'].value.replace('%d', form['number'].value),
+    );
+    form['formula-output'].children[1].innerText = getFormulaOutput(
+      form['formula'].value,
+      form['number'].value,
+    );
+  }
   form['formula'].addEventListener('change', setView);
   form['number'].addEventListener('keydown', setView);
-
-  // For initialization of the view.
   setView();
 });
+
+/**
+ * @param {string} infixExpr
+ * @returns
+ */
+function getNumberOutput(infixExpr) {
+  return parseFloat(
+    GLOBAL_BinaryTree.evaluate(GLOBAL_BinaryTree.fromInfix(infixExpr)).toFixed(
+      4,
+    ),
+  );
+}
+
+/**
+ * @param {string} formula
+ * @param {string} number
+ */
+function getFormulaOutput(formula, number) {
+  return formula.replace('%d', number).replace('( ', '(').replace(' )', ')');
+}

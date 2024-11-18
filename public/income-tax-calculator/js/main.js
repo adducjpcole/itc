@@ -1,19 +1,17 @@
 'use strict';
 
 window.addEventListener('load', () => {
-  const inp = document.querySelector('input');
-  const out = document.querySelector('output');
-  if (!inp || !out) throw new Error('Something went wrong');
+  const inp = document.getElementsByTagName('input')[0];
+  const out = document.getElementsByTagName('output')[0];
 
-  const setDisplay = () => {
+  const handleInput = () => {
     out.value = getIncomeTax(Number(inp.value)).toLocaleString('en-PH', {
       style: 'currency',
       currency: 'PHP',
     });
   };
-  setDisplay();
-
-  inp.addEventListener('input', setDisplay);
+  inp.addEventListener('input', handleInput);
+  handleInput();
 });
 
 /**

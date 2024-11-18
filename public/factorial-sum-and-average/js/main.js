@@ -1,7 +1,7 @@
 'use strict';
 
 window.addEventListener('load', () => {
-  const inp = document.querySelector('input');
+  const inp = document.getElementsByTagName('input')[0];
   const out_fac = /** @type {HTMLOutputElement|null} */ (
     document.querySelector('output[name="fac"]')
   );
@@ -12,11 +12,9 @@ window.addEventListener('load', () => {
   const out_avg = /** @type {HTMLOutputElement|null} */ (
     document.querySelector('output[name="avg"]')
   );
+  if (!out_fac || !out_sum || !out_avg) throw new Error('Something went wrong');
 
-  if (!inp || !out_fac || !out_sum || !out_avg)
-    throw new Error('Something went wrong');
-
-  const setDisplay = () => {
+  const handleInput = () => {
     const n = inp.value.length > 0 ? Number(inp.value) : 0;
 
     out_fac.value = calcFactorial(n).toString();
@@ -26,9 +24,8 @@ window.addEventListener('load', () => {
 
     out_avg.value = calcAvg(n).toString();
   };
-  setDisplay();
-
-  inp.addEventListener('input', setDisplay);
+  inp.addEventListener('input', handleInput);
+  handleInput();
 });
 
 /**
