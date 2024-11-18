@@ -9,13 +9,6 @@
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  .card {
-    display: grid;
-    gap: 0.5rem;
-    grid-template-columns: 1fr 2fr;
-    justify-items: center;
-  }
-
   form,
   output,
   input {
@@ -23,8 +16,26 @@
     font-size: 1rem;
   }
 
+  output {
+    overflow: auto hidden;
+    width: 15rem;
+  }
+
   input[name="integer"] {
+    border: 1px solid black;
     grid-area: 1 / span 2;
     width: 100%;
+  }
+}
+
+@layer components {
+  .card {
+    display: grid;
+    gap: 0.5rem;
+    grid-template-columns: 1fr 2fr;
+    justify-items: center;
+    border: 1px solid black;
+    border-radius: 0.4em;
+    padding: 1.25em;
   }
 }
