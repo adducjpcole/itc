@@ -68,7 +68,7 @@ SHARED_onReady(() => {
       const tbody = table.tBodies[0];
       const deleteLineNumber_value = Number(deleteLineNumber.value);
       if (
-        deleteLineNumber_value < 0 ||
+        deleteLineNumber_value <= 0 ||
         deleteLineNumber_value > tbody.rows.length
       ) {
         throw new RangeError('Line number out of bounds.');
