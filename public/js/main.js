@@ -1,6 +1,6 @@
 'use strict';
 
-GLOBAL_onReady(() => {
+SHARED_onReady(() => {
   const iframe = document.getElementsByTagName('iframe')[0];
   iframe.addEventListener('load', () => {
     iframe.classList.remove('loading');
@@ -12,7 +12,7 @@ GLOBAL_onReady(() => {
     iframe.contentWindow?.addEventListener('unload', handleUnlod);
   });
 
-  const handleResize = GLOBAL_debounce(() => {
+  const handleResize = SHARED_debounce(() => {
     iframe.width = window.innerWidth.toString();
     iframe.height = window.innerHeight.toString();
   }, 250);

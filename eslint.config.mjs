@@ -27,7 +27,7 @@ export default [
       'no-unused-vars': [
         'warn',
         {
-          varsIgnorePattern: '^GLOBAL_',
+          varsIgnorePattern: '^(GLOBAL_|SHARED_)',
         },
       ],
     },

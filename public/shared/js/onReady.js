@@ -1,4 +1,4 @@
-const GLOBAL_onReady = (() => {
+const SHARED_onReady = (() => {
   /**
    * Utility function to call the `callback()` when the DOM content is loaded
    * or already loaded.

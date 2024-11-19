@@ -8,7 +8,7 @@
  * @prop {number} deductionAmount
  */
 
-GLOBAL_onReady(() => {
+SHARED_onReady(() => {
   const employeeName = /** @type {HTMLInputElement?} */ (
     document.getElementById('employee-name')
   );

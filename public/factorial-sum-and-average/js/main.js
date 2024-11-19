@@ -1,6 +1,6 @@
 'use strict';
 
-GLOBAL_onReady(() => {
+SHARED_onReady(() => {
   const inp = document.getElementsByTagName('input')[0];
   const out_fac = /** @type {HTMLOutputElement|null} */ (
     document.querySelector('output[name="fac"]')

@@ -7,7 +7,7 @@
  * @param {number} delay
  * @returns {(...args: Parameters<T>) => void}
  */
-function GLOBAL_debounce(fn, delay) {
+function SHARED_debounce(fn, delay) {
   /** @type {number} */
   let timeout;
   return (...args) => {
