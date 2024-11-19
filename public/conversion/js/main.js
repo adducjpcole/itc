@@ -10,13 +10,14 @@ SHARED_onReady(() => {
     form['number-output'].value = getNumberOutput(
       form['formula'].value.replace('%d', form['number'].value),
     );
-    form['formula-output'].children[1].innerText = getFormulaOutput(
+    form['formula-output'].value = getFormulaOutput(
       form['formula'].value,
       form['number'].value,
     );
   }
+
   form['formula'].addEventListener('change', setView);
-  form['number'].addEventListener('keydown', setView);
+  form['number'].addEventListener('input', setView);
   setView();
 });
 

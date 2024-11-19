@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Simple Payroll</title>
-    <link inline rel="stylesheet" href="../shared/css/reset.css" />
-    <link inline rel="stylesheet" href="../shared/css/utilities.css" />
+    <link inline rel="stylesheet" href="../shared/css/shared.css" />
+    <link inline rel="stylesheet" href="../shared/css/ibm-plex-sans.css" />
     <link inline rel="stylesheet" href="./css/styles.css" />
   </head>
 
@@ -13,76 +13,86 @@
     <main id="root">
       <h1 class="text-center">Simple Payroll</h1>
 
-      <section class="card">
-        <h2>Create Entry</h2>
+      <section id="content">
+        <section class="card">
+          <h2 class="mb-0">Create Entry</h2>
 
-        <form id="form--create-entry" autocomplete="off">
-          <label for="employee-name">Employee Name</label>
-          <input
-            name="employee-name"
-            id="employee-name"
-            type="text"
-            value="Juan dela Cruz"
-          />
+          <hr class="my-6" />
 
-          <label for="days-worked">Days Worked</label>
-          <input
-            name="days-worked"
-            id="days-worked"
-            type="number"
-            min="0"
-            value="30"
-          />
+          <form id="form--create-entry" autocomplete="off">
+            <label for="employee-name">Employee Name</label>
+            <input
+              name="employee-name"
+              id="employee-name"
+              type="text"
+              value="Juan dela Cruz"
+              class="card p-2"
+            />
 
-          <label for="daily-rate">Daily Rate</label>
-          <input
-            name="daily-rate"
-            id="daily-rate"
-            type="number"
-            min="0"
-            value="615"
-          />
+            <label for="days-worked">Days Worked</label>
+            <input
+              name="days-worked"
+              id="days-worked"
+              type="number"
+              min="0"
+              value="30"
+              class="card p-2"
+            />
 
-          <label for="deduction-amount">Deduction Amount</label>
-          <input
-            name="deduction-amount"
-            id="deduction-amount"
-            type="number"
-            min="0"
-            value="0"
-          />
+            <label for="daily-rate">Daily Rate</label>
+            <input
+              name="daily-rate"
+              id="daily-rate"
+              type="number"
+              min="0"
+              value="615"
+              class="card p-2"
+            />
 
-          <button type="submit">Submit</button>
-        </form>
-      </section>
+            <label for="deduction-amount">Deduction Amount</label>
+            <input
+              name="deduction-amount"
+              id="deduction-amount"
+              type="number"
+              min="0"
+              value="0"
+              class="card p-2"
+            />
 
-      <section class="card">
-        <h2>Payroll Table</h2>
+            <button class="button" type="submit">Submit</button>
+          </form>
+        </section>
 
-        <table id="table--payroll-table">
-          <thead>
-            <tr>
-              <th scope="col">No.</th>
-              <th scope="col">Employee Name</th>
-              <th scope="col">Days Worked</th>
-              <th scope="col">Daily Rate</th>
-              <th scope="col">Gross Pay</th>
-              <th scope="col">Deduction Amount</th>
-              <th scope="col">Net Pay</th>
-            </tr>
-          </thead>
-          <tbody></tbody>
-        </table>
+        <section class="card">
+          <h2>Payroll Table</h2>
 
-        <form id="form--delete-entry" autocomplete="off">
-          <label for="delete-line-number">Delete Line Number</label>
-          <input
-            type="number"
-            name="delete-line-number"
-            id="delete-line-number"
-          />
-          <button type="submit">Delete</button>
-        </form>
+          <table id="table--payroll-table" class="table">
+            <thead>
+              <tr>
+                <th scope="col">No.</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Days Worked</th>
+                <th scope="col">Daily Rate</th>
+                <th scope="col">Gross Pay</th>
+                <th scope="col">Deduction Amount</th>
+                <th scope="col">Net Pay</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+
+          <form id="form--delete-entry" autocomplete="off">
+            <label for="delete-line-number">Delete Line Number</label>
+
+            <input
+              type="number"
+              name="delete-line-number"
+              id="delete-line-number"
+              class="card p-2"
+            />
+            <button class="button px-4" type="submit">Delete</button>
+          </form>
+        </section>
       </section>
     </main>
 

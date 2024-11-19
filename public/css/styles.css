@@ -1,5 +1,3 @@
-@layer reset, base, components, utilities;
-
 @layer base {
   body {
     overflow: hidden;
@@ -13,9 +11,13 @@
 }
 
 @layer components {
+  .iframe-container {
+    display: inherit;
+  }
+
   .iframe-container:has(iframe.loading) {
-    background: url('../images/throbber.gif') center center / 10rem no-repeat;
-    background-color: white;
+    background: url('../images/rolling-throbber.svg') center center / 10rem
+      no-repeat;
     z-index: 1;
   }
 
@@ -28,7 +30,6 @@
     transition: transform 0.3s ease;
   }
 
-  /* Trigger for popover */
   .popover-container::before {
     content: '\25bc';
     text-align: center;

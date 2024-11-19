@@ -6,10 +6,10 @@ SHARED_onReady(() => {
     iframe.classList.remove('loading');
 
     const handleUnlod = () => {
-      iframe.contentWindow?.removeEventListener('unload', handleUnlod);
+      iframe.contentWindow?.removeEventListener('beforeunload', handleUnlod);
       iframe.classList.add('loading');
     };
-    iframe.contentWindow?.addEventListener('unload', handleUnlod);
+    iframe.contentWindow?.addEventListener('beforeunload', handleUnlod);
   });
 
   const handleResize = SHARED_debounce(() => {
@@ -26,11 +26,14 @@ SHARED_onReady(() => {
     a.addEventListener('click', (ev) => {
       ev.preventDefault();
 
+      if (iframe.src === a.href) return;
+
       for (const otherAnchor of anchors) {
         if (otherAnchor === a) continue;
 
         otherAnchor.classList.remove('selected');
       }
+
       a.classList.add('selected');
 
       iframe.src = a.href;

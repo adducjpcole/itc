@@ -4,8 +4,9 @@
     <meta charset="utf-8" />
     <title>Unit Converter</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link inline rel="stylesheet" href="../shared/css/reset.css" />
-    <link inline rel="stylesheet" href="../shared/css/utilities.css" />
+    <link inline rel="stylesheet" href="../shared/css/shared.css" />
+    <link inline rel="stylesheet" href="../shared/css/cmun-serif.css" />
+    <link inline rel="stylesheet" href="../shared/css/ibm-plex-sans.css" />
     <link inline rel="stylesheet" href="./css/styles.css" />
 
     <script inline src="../shared/js/onReady.js"></script>
@@ -18,7 +19,7 @@
       <h1>Unit Converter</h1>
 
       <form class="card">
-        <select name="formula">
+        <select id="formula" name="formula" class="text-m p-1">
           <optgroup label="Temperature">
             <option value="( %d * 9 / 5 ) + 32">Celsius to Fahrenheit</option>
             <option value="( %d - 32 ) * 5 / 9">Fahrenheit to Celsius</option>
@@ -29,25 +30,33 @@
           </optgroup>
         </select>
 
-        <div id="form__number-view">
-          <input name="number" class="text-center" type="number" value="0" />
+        <div id="number-view">
+          <input
+            name="number"
+            class="text-center card p-1"
+            type="number"
+            value="0"
+          />
           <span class="text-center">=</span>
-          <output name="number-output" for="number" class="text-center">
+          <output
+            name="number-output"
+            for="number"
+            class="text-center card--alt p-1"
+          >
             Something went wrong.
           </output>
         </div>
 
-        <output name="formula-output" for="formula">
-          <span
-            id="formula-output__highlight"
-            class="text-highlight text-center"
+        <div class="mt-2 mr-auto ml-0">
+          <span class="badge text-center mr-4 text-sm"> Formula </span>
+          <output
+            name="formula-output"
+            for="formula"
+            class="cmun-serif text-center"
           >
-            Formula
-          </span>
-          <span class="font-cmu-serif text-center">
             Something went wrong.
-          </span>
-        </output>
+          </output>
+        </div>
       </form>
     </main>
   </body>

@@ -1,78 +1,33 @@
 @layer reset, base, components, utilities;
 
 @layer base {
-  #root {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    font-style: normal;
+  #content {
     margin: 1rem;
     display: grid;
-    gap: 1rem;
     grid-template-columns: 2fr 5fr;
-    justify-content: center;
-  }
-
-  #root h1 {
-    margin: 0.25rem 0;
-    grid-column: span 2;
-  }
-
-  form,
-  output,
-  input {
-    outline: none;
-    font-size: 1rem;
+    grid-template-rows: 1fr max-content;
+    gap: 1rem;
   }
 
   #form--create-entry {
     display: grid;
-    gap: 1rem;
     grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  #form--create-entry button[type='submit'] {
+    grid-column: 1 / span 2;
   }
 
   #form--delete-entry {
     margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+    width: 25%;
   }
 
-  button[type='submit'] {
-    grid-column: 2;
-  }
-
-  table,
-  th,
-  td {
-    border: 1px solid black;
-  }
-
-  table {
-    width: 100%;
-  }
-
-  th,
-  td {
-    padding: 0.5rem;
-  }
-
-  td input,
-  td output {
-    width: 100%;
-  }
-
-  thead th,
-  tfoot th {
-    color: #fff;
-    background-color: #282c34;
-  }
-}
-
-@layer components {
-  .card {
-    border: 1px solid black;
-    border-radius: 0.4em;
-    padding: 1.25em;
-  }
-
-  .card > h2 {
-    margin: 0 0 1.5rem 0;
+  #form--delete-entry label {
+    grid-column: 1 / span 2;
   }
 }

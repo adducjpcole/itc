@@ -1,0 +1,235 @@
+@layer reset, base, components, utilities;
+
+@layer base {
+  :root {
+    background-color: #f0f2f4;
+  }
+
+  #root {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+@layer components {
+  .card {
+    border-style: none;
+    border-radius: 0.4rem;
+    padding: 1.25rem;
+    box-shadow: 0 0 0.25rem hsla(0, 0%, 0%, 0.212);
+    background-color: #ffffff;
+  }
+
+  .card--alt {
+    border-style: none;
+    border-radius: 0.4rem;
+    padding: 1.25rem;
+    box-shadow: 0 0 0.25rem hsla(0, 0%, 0%, 0.212);
+    background-color: #f0f2f4;
+  }
+
+  .badge {
+    color: #ffffff;
+    background-color: #9512f3;
+    border-radius: 0.2rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .button {
+    font-weight: 500;
+    padding: 0.5rem;
+    color: #ffffff;
+    border-radius: 0.4rem;
+    border-style: none;
+    background-color: #2156cb;
+    transition:
+      background-color 300ms ease,
+      box-shadow 300ms ease;
+  }
+
+  .button:hover {
+    background-color: #3972ec;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
+  }
+
+  .button:active {
+    background-color: #2156cb;
+    box-shadow: none;
+  }
+
+  .table,
+  .table th > *,
+  .table td > * {
+    width: 100%;
+  }
+
+  .table,
+  .table th,
+  .table td {
+    border-collapse: collapse;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.5rem;
+  }
+
+  .table thead th {
+    color: #ffffff;
+    background-color: #2156cb;
+  }
+
+  .table tbody tr {
+    transition: background-color 250ms ease;
+  }
+
+  .table tbody tr:nth-child(even) {
+    background-color: #f0f2f4;
+  }
+
+  .table tbody tr:hover {
+    background-color: hsl(210, 15%, 85%);
+  }
+}
+
+@layer utilities {
+  .text-center {
+    text-align: center;
+  }
+
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .text-m {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .w-1\/1 {
+    width: 100%;
+  }
+
+  .mr-auto {
+    margin-right: auto;
+  }
+
+  .ml-0 {
+    margin-left: 0;
+  }
+
+  .mb-0 {
+    margin-bottom: 0;
+  }
+
+  .mt-2 {
+    margin-top: 0.5rem;
+  }
+
+  .mx-4 {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .mr-4 {
+    margin-right: 1rem;
+  }
+
+  .my-6 {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .p-1 {
+    padding: 0.25rem;
+  }
+
+  .px-1 {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  .p-2 {
+    padding: 0.5rem;
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .border-none {
+    border-style: none;
+  }
+}
+
+@layer reset {
+  iframe {
+    display: block;
+    border: unset;
+  }
+
+  *,
+  *::before,
+  *::after {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: unset;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  input[type='number'] {
+    min-width: 0;
+    font-size: medium;
+  }
+
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+  }
+
+  output {
+    margin: auto;
+    display: inline-block;
+  }
+
+  img,
+  picture,
+  svg,
+  canvas {
+    display: block;
+    max-inline-size: 100%;
+    block-size: auto;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
