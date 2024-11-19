@@ -6,14 +6,15 @@
   }
 
   #root {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+
+    /* .ibm-plex-sans-regular */
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    font-style: normal;
   }
 }
 
@@ -35,6 +36,10 @@
   }
 
   .badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
     color: #ffffff;
     background-color: #9512f3;
     border-radius: 0.2rem;
@@ -55,11 +60,34 @@
 
   .button:hover {
     background-color: #3972ec;
-    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.4);
   }
 
   .button:active {
     background-color: #2156cb;
+    box-shadow: none;
+  }
+
+  .button--alt {
+    font-weight: 500;
+    padding: 0.5rem;
+    color: #2156cb;
+    border: 1px solid #2156cb;
+    border-radius: 0.4rem;
+    background-color: #ffffff;
+    transition:
+      color 300ms ease,
+      background-color 300ms ease,
+      box-shadow 300ms ease;
+  }
+
+  .button--alt:hover {
+    color: #ffffff;
+    background-color: #2156cb;
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.4);
+  }
+
+  .button--alt:active {
     box-shadow: none;
   }
 
@@ -117,6 +145,10 @@
     width: 100%;
   }
 
+  .m-0 {
+    margin: 0;
+  }
+
   .mr-auto {
     margin-right: auto;
   }
@@ -129,8 +161,17 @@
     margin-bottom: 0;
   }
 
+  .mx-1 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+
   .mt-2 {
     margin-top: 0.5rem;
+  }
+
+  .mb-2 {
+    margin-bottom: 0.5rem;
   }
 
   .mx-4 {
@@ -144,6 +185,10 @@
 
   .my-6 {
     margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mb-6 {
     margin-bottom: 1.5rem;
   }
 

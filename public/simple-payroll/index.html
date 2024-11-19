@@ -15,7 +15,7 @@
 
       <section id="content">
         <section class="card">
-          <h2 class="mb-0">Create Entry</h2>
+          <h2 class="m-0">Create Entry</h2>
 
           <hr class="my-6" />
 
@@ -64,7 +64,7 @@
         </section>
 
         <section class="card">
-          <h2>Payroll Table</h2>
+          <h2 class="m-0 mb-6" >Payroll Table</h2>
 
           <table id="table--payroll-table" class="table">
             <thead>
@@ -95,6 +95,21 @@
         </section>
       </section>
     </main>
+
+    <dialog id="dialog--confirm-delete" class="card ibm-plex-sans-regular">
+      <p>
+        Delete line
+        <span id="dialog--confirm-delete__line-number" class="mx-1 badge">
+          3
+        </span>
+        ?
+      </p>
+
+      <form>
+        <button type="reset" class="button--alt p-2" autofocus>Cancel</button>
+        <button type="submit" class="button px-4">Delete</button>
+      </form>
+    </dialog>
 
     <script inline src="../shared/js/onReady.js"></script>
     <script inline src="./js/main.js"></script>

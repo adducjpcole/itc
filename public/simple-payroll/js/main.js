@@ -12,7 +12,15 @@ SHARED_onReady(() => {
   const employeeName = /** @type {HTMLInputElement?} */ (
     document.getElementById('employee-name')
   );
-  if (!employeeName) throw new Error('Something went wrong');
+  const dialog_confirmDelete = /** @type {HTMLDialogElement?} */ (
+    document.getElementById('dialog--confirm-delete')
+  );
+  const dialog_confirmDelete_lineNumber = /** @type {HTMLSpanElement} */ (
+    document.getElementById('dialog--confirm-delete__line-number')
+  );
+
+  if (!(employeeName && dialog_confirmDelete))
+    throw new Error('Something went wrong');
 
   // Remove trailing and leading spaces.
   employeeName.addEventListener(
@@ -74,8 +82,30 @@ SHARED_onReady(() => {
         throw new RangeError('Line number out of bounds.');
       }
 
-      deleteTableRow(tbody, deleteLineNumber_value - 1);
+      dialog_confirmDelete_lineNumber.innerText =
+        deleteLineNumber_value.toString();
+
+      dialog_confirmDelete.showModal();
     });
+
+  dialog_confirmDelete.addEventListener('reset', () =>
+    dialog_confirmDelete.close(),
+  );
+
+  dialog_confirmDelete.addEventListener('submit', (ev) => {
+    ev.preventDefault();
+
+    const deleteLineNumber = /** @type {HTMLInputElement} */ (
+      document.getElementById('delete-line-number')
+    );
+    const table = /** @type {HTMLTableElement} */ (
+      document.getElementById('table--payroll-table')
+    );
+
+    deleteTableRow(table.tBodies[0], Number(deleteLineNumber.value) - 1);
+
+    dialog_confirmDelete.close();
+  });
 });
 
 /**
