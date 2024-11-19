@@ -5,11 +5,11 @@ SHARED_onReady(() => {
   iframe.addEventListener('load', () => {
     iframe.classList.remove('loading');
 
-    const handleUnlod = () => {
-      iframe.contentWindow?.removeEventListener('beforeunload', handleUnlod);
+    const handlePagehide = () => {
+      iframe.contentWindow?.removeEventListener('pagehide', handlePagehide);
       iframe.classList.add('loading');
     };
-    iframe.contentWindow?.addEventListener('beforeunload', handleUnlod);
+    iframe.contentWindow?.addEventListener('pagehide', handlePagehide);
   });
 
   const handleResize = SHARED_debounce(() => {
