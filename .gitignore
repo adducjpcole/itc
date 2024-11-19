@@ -1,8 +1,9 @@
 # Dependency directories
 node_modules/
 
-# Distribution directory
+# Distribution directory/file
 build/
+bundle.*
 
 # Visual Studio Code
 .vscode/

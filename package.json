@@ -3,10 +3,11 @@
     "lint": "eslint . && npx tsc -p jsconfig.json",
     "pretty": "prettier --write \"./**/*.{js,jsx,mjs,cjs,ts,tsx,json,html,css}\"",
     "dev": "npx live-server .",
-    "build@conv": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/conversion/index.html > ./build/bundle.html",
-    "build@fact": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/factorial-sum-and-average/index.html > ./build/bundle.html",
-    "build@inco": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/income-tax-calculator/index.html > ./build/bundle.html",
-    "build@simp": "mkdir build | npx inline-source-cli --compress false --rootpath ./ ./public/simple-payroll/index.html > ./build/bundle.html"
+    "build": "npm run build@conv && npm run build@fact && npm run build@inco && npm run build@simp",
+    "build@conv": "npx inline-source-cli --compress false --rootpath ./ ./public/conversion/index.html > ./public/conversion/bundle.html",
+    "build@fact": "npx inline-source-cli --compress false --rootpath ./ ./public/factorial-sum-and-average/index.html > ./public/factorial-sum-and-average/bundle.html",
+    "build@inco": "npx inline-source-cli --compress false --rootpath ./ ./public/income-tax-calculator/index.html > ./public/income-tax-calculator/bundle.html",
+    "build@simp": "npx inline-source-cli --compress false --rootpath ./ ./public/simple-payroll/index.html > ./public/simple-payroll/bundle.html"
   },
   "devDependencies": {
     "@eslint/js": "^9.14.0",
