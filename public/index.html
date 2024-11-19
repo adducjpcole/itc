@@ -8,11 +8,20 @@
     <link rel="stylesheet" href="./shared/css/utilities.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="icon" href="./favicon.ico" sizes="any" />
+
+    <script src="./shared/js/onReady.js"></script>
+    <script src="./shared/js/debounce.js"></script>
+    <script src="./js/main.js"></script>
   </head>
 
   <body>
-    <main id="root">
-      <iframe width="0" height="0" src="./conversion/index.html">
+    <main id="root" class="iframe-container">
+      <iframe
+        class="loading"
+        width="0"
+        height="0"
+        src="./conversion/index.html"
+      >
         Something went wrong.
       </iframe>
     </main>
@@ -21,7 +30,9 @@
       <div class="popover-content">
         <ul class="navbar">
           <li>
-            <a data-trap href="./conversion/index.html" class="selected"> Conversion </a>
+            <a data-trap href="./conversion/index.html" class="selected">
+              Conversion
+            </a>
           </li>
           <li>
             <a data-trap href="./factorial-sum-and-average/index.html">
@@ -39,8 +50,5 @@
         </ul>
       </div>
     </footer>
-
-    <script src="./shared/js/debounce.js"></script>
-    <script src="./js/main.js"></script>
   </body>
 </html>

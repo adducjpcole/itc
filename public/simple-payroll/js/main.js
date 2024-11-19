@@ -8,7 +8,7 @@
  * @prop {number} deductionAmount
  */
 
-window.addEventListener('load', () => {
+GLOBAL_onReady(() => {
   const employeeName = /** @type {HTMLInputElement?} */ (
     document.getElementById('employee-name')
   );

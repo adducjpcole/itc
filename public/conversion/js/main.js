@@ -1,6 +1,6 @@
 'use strict';
 
-window.addEventListener('load', () => {
+GLOBAL_onReady(() => {
   const form = document.getElementsByTagName('form')[0];
   form.addEventListener('submit', (ev) => ev.preventDefault());
 

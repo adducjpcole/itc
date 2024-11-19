@@ -1,4 +1,7 @@
 /**
+ * Utility function for "debouncing a function." This that ensures that it
+ * doesn’t get called too frequently.
+ *
  * @template {Function} T
  * @param {T} fn
  * @param {number} delay

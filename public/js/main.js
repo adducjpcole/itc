@@ -1,7 +1,16 @@
 'use strict';
 
-window.addEventListener('load', () => {
+GLOBAL_onReady(() => {
   const iframe = document.getElementsByTagName('iframe')[0];
+  iframe.addEventListener('load', () => {
+    iframe.classList.remove('loading');
+
+    const handleUnlod = () => {
+      iframe.contentWindow?.removeEventListener('unload', handleUnlod);
+      iframe.classList.add('loading');
+    };
+    iframe.contentWindow?.addEventListener('unload', handleUnlod);
+  });
 
   const handleResize = GLOBAL_debounce(() => {
     iframe.width = window.innerWidth.toString();

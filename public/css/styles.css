@@ -13,6 +13,12 @@
 }
 
 @layer components {
+  .iframe-container:has(iframe.loading) {
+    background: url('../images/throbber.gif') center center / 10rem no-repeat;
+    background-color: white;
+    z-index: 1;
+  }
+
   .popover-container {
     position: absolute;
     left: 0;

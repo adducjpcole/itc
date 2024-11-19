@@ -1,6 +1,6 @@
 'use strict';
 
-window.addEventListener('load', () => {
+GLOBAL_onReady(() => {
   const inp = document.getElementsByTagName('input')[0];
   const out = document.getElementsByTagName('output')[0];
 
