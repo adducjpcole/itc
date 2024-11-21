@@ -1,11 +1,11 @@
 'use strict';
 
 /**
- * @typedef {Object} PayrollEntry
+ * @typedef {object} PayrollEntry
  * @prop {string} employeeName
- * @prop {number} daysWorked
- * @prop {number} dailyRate
- * @prop {number} deductionAmount
+ * @property {number} daysWorked
+ * @property {number} dailyRate
+ * @property {number} deductionAmount
  */
 
 SHARED_onReady(() => {

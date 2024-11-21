@@ -23,7 +23,6 @@ SHARED_onReady(() => {
 
 /**
  * @param {string} infixExpr
- * @returns
  */
 function getNumberOutput(infixExpr) {
   return parseFloat(
