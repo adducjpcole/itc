@@ -13,8 +13,8 @@
   </head>
 
   <body>
-    <main id="root">
-      <h1>Income Tax Calculator</h1>
+    <main id="root" class="mx-4">
+      <h1 class="text-center">Income Tax Calculator</h1>
 
       <form class="card">
         <input
@@ -23,16 +23,20 @@
           type="number"
           value="0"
         />
-        <span class="text-center">=</span>
-        <output
-          class="text-center card--alt p-1"
-          name="tax"
-          for="income"
-          type="number"
-          size="20"
-        >
-          Something went wrong.
-        </output>
+
+        <fieldset class="card--ghost">
+          <label class="mr-4" for="tax"> Tax </label>
+          <output
+            id="tax"
+            class="text-center card--alt p-1"
+            name="tax"
+            for="income"
+            type="number"
+            size="20"
+          >
+            Something went wrong.
+          </output>
+        </fieldset>
       </form>
     </main>
   </body>

@@ -35,6 +35,14 @@
     background-color: #f0f2f4;
   }
 
+  .card--ghost {
+    border-radius: 0.4rem;
+    padding: 1.25rem;
+    color: #2156cb;
+    border: 1px solid #2156cb;
+    background-color: #ffffff;
+  }
+
   .badge {
     display: inline-flex;
     justify-content: center;

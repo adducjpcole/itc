@@ -1,14 +1,12 @@
 @layer base {
   form {
     gap: 1rem;
-    display: grid;
-    grid-template-columns: 3fr 1fr 3fr;
-    flex-direction: row;
-    align-items: center;
-    justify-items: center;
+    display: flex;
+    flex-flow: column wrap;
+    min-width: 30%;
   }
 
-  form * {
+  input {
     width: 100%;
   }
 }
