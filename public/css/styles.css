@@ -1,11 +1,14 @@
 @layer base {
   body {
+    position: fixed;
     overflow: hidden;
     margin: 0;
   }
 
   iframe {
     z-index: -1;
+    width: 100vw;
+    height: 100vh;
     resize: none;
   }
 }
@@ -87,7 +90,7 @@
   }
 
   .navbar li {
-    display: inline-block;
+    display: flex;
   }
 
   .navbar a {
@@ -98,7 +101,7 @@
     text-decoration: none;
     color: #dadde8;
     padding: 0.5rem 1rem;
-    border-bottom: 0px solid transparent;
+    border-bottom: 0 solid transparent;
     transition: border-bottom 100ms ease;
   }
 

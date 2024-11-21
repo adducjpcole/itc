@@ -12,13 +12,6 @@ SHARED_onReady(() => {
     iframe.contentWindow?.addEventListener('pagehide', handlePagehide);
   });
 
-  const handleResize = SHARED_debounce(() => {
-    iframe.width = window.innerWidth.toString();
-    iframe.height = window.innerHeight.toString();
-  }, 250);
-  window.addEventListener('resize', handleResize);
-  handleResize();
-
   const anchors = /** @type {NodeListOf<HTMLAnchorElement>}*/ (
     document.querySelectorAll('a[data-trap]')
   );
