@@ -68,7 +68,7 @@
     box-shadow: none;
   }
 
-  .button--alt {
+  .button--ghost {
     font-weight: 500;
     padding: 0.5rem;
     color: #2156cb;
@@ -81,13 +81,13 @@
       box-shadow 300ms ease;
   }
 
-  .button--alt:hover {
+  .button--ghost:hover {
     color: #ffffff;
     background-color: #2156cb;
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.4);
   }
 
-  .button--alt:active {
+  .button--ghost:active {
     box-shadow: none;
   }
 
