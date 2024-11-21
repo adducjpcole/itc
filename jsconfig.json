@@ -6,6 +6,6 @@
     "strict": true,
     "baseUrl": "./"
   },
-  "include": ["**/*.js"],
+  "include": ["types/**/*.d.ts", "**/*.js"],
   "exclude": ["node_modules", "scripts"]
 }

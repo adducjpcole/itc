@@ -1,16 +1,37 @@
 import globals from 'globals';
 import pluginJs from '@eslint/js';
+import pluginJsdoc from 'eslint-plugin-jsdoc';
+import pluginImport from 'eslint-plugin-import';
 import pluginHtml from '@html-eslint/eslint-plugin';
+import configPrettier from 'eslint-config-prettier';
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   pluginJs.configs.recommended,
+  pluginImport.flatConfigs.recommended,
+  pluginJsdoc.configs['flat/recommended'],
   {
     ignores: ['node_modules', '**/dist'],
   },
   {
     files: ['**/*.js'],
-    languageOptions: { globals: globals.browser },
+    languageOptions: {
+      ecmaVersion: 2022,
+      globals: globals.browser,
+    },
+    rules: {
+      'jsdoc/tag-lines': ['error' | 'warn', 'any', { startLines: 1 }],
+      'jsdoc/check-tag-names': [
+        'error' | 'warn',
+        { enableFixer: false, typed: true },
+      ],
+      'jsdoc/require-jsdoc': 'off',
+      'jsdoc/no-undefined-types': 'off',
+      'jsdoc/require-property-description': 'off',
+      'jsdoc/require-returns': 'off',
+      'jsdoc/require-returns-description': 'off',
+      'jsdoc/require-param-description': 'off',
+    },
   },
   {
     files: ['**/main.js'],
@@ -49,4 +70,5 @@ export default [
       '@html-eslint/no-extra-spacing-attrs': 'off',
     },
   },
+  configPrettier,
 ];
