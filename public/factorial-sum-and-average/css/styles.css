@@ -1,38 +1,21 @@
 @layer base {
-  #root {
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    display: flex;
-    align-items: center;
+  form {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem;
     justify-content: center;
-    flex-direction: column;
+    justify-items: center;
+    min-width: 25%;
+    padding: 1.25rem;
+    border-radius: 0.4rem;
   }
 
-  form,
-  output,
-  input {
-    outline: none;
-    font-size: 1rem;
-  }
-
-  output {
-    overflow: auto hidden;
-    width: 15rem;
-  }
-
-  input[name='integer'] {
-    border: 1px solid black;
-    grid-area: 1 / span 2;
+  form * {
     width: 100%;
   }
 
-  form {
-    display: grid;
-    gap: 0.5rem;
-    grid-template-columns: 1fr 2fr;
-    justify-items: center;
-    border-radius: 0.4rem;
-    padding: 1.25rem;
+  input {
+    grid-column: span 2;
+    border: 1px solid black;
   }
 }
