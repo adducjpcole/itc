@@ -1,6 +1,5 @@
 @layer base {
   body {
-    position: fixed;
     overflow: hidden;
     margin: 0;
   }
@@ -15,6 +14,7 @@
 
 @layer components {
   .iframe-container {
+    /* why? this fixes where interaction is blocked with iframe */
     display: inherit;
   }
 
@@ -25,7 +25,7 @@
   }
 
   .popover-container {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     transform: translate(0, 100%);
@@ -38,9 +38,9 @@
     text-align: center;
     position: absolute;
     left: 0;
-    bottom: calc(100%);
+    bottom: 100%;
     width: 100%;
-    height: 3rem;
+    height: 2rem;
     color: rgba(0, 0, 0, 0.25);
     background-color: transparent;
     transition: color 0.3s ease;
@@ -53,7 +53,7 @@
     }
 
     50% {
-      transform: translateX(0) translateY(1rem);
+      transform: translateX(0) translateY(0.5rem);
     }
 
     100% {
@@ -62,9 +62,9 @@
   }
 
   .popover-container .popover-content {
-    box-shadow: 0 30px 20px 30px transparent;
     background-color: #121c4e;
     padding: 1rem;
+    box-shadow: 0 30px 20px 30px transparent;
     transition: box-shadow 0.3s ease;
   }
 
@@ -82,11 +82,12 @@
 
   .navbar {
     display: flex;
+    flex-flow: row wrap;
     justify-content: center;
     gap: 1rem;
-    list-style: none;
     padding: 0;
     margin: 0;
+    list-style: none;
   }
 
   .navbar li {
