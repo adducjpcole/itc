@@ -2,33 +2,32 @@
 
 @layer base {
   #content {
-    margin: 1rem;
-    display: grid;
-    grid-template-columns: 2fr 5fr;
-    grid-template-rows: 1fr max-content;
+    display: flex;
+    flex-flow: row nowrap;
     gap: 1rem;
+  }
+
+  section {
+    width: 100%;
   }
 
   #form--create-entry {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
     gap: 1rem;
+  }
+
+  #form--create-entry > * {
+    width: 100%;
   }
 
   #form--create-entry button[type='submit'] {
-    grid-column: 1 / span 2;
+    grid-column: span 2;
   }
 
-  #form--delete-entry {
-    margin: 1rem 0;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 1rem;
-    width: 25%;
-  }
-
-  #form--delete-entry label {
-    grid-column: 1 / span 2;
+  .table-wrapper {
+    overflow-x: auto;
   }
 
   #dialog--confirm-delete {
@@ -56,5 +55,11 @@
   #dialog--confirm-delete form {
     display: flex;
     justify-content: space-between;
+  }
+
+  @media only screen and (max-width: 992px) {
+    #content {
+      flex-flow: column-reverse wrap;
+    }
   }
 }

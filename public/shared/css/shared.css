@@ -135,6 +135,10 @@
 }
 
 @layer utilities {
+  .flex {
+    display: flex;
+  }
+
   .text-center {
     text-align: center;
   }
@@ -182,9 +186,18 @@
     margin-bottom: 0.5rem;
   }
 
+  .mr-2 {
+    margin-right: 0.5rem;
+  }
+
   .mx-4 {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+
+  .my-4 {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   .mr-4 {

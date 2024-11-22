@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <main id="root">
+    <main id="root" class="mx-4 mb-4">
       <h1 class="text-center">Simple Payroll</h1>
 
       <section id="content">
@@ -66,31 +66,39 @@
         <section class="card">
           <h2 class="m-0 mb-6">Payroll Table</h2>
 
-          <table id="table--payroll-table" class="table">
-            <thead>
-              <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Employee Name</th>
-                <th scope="col">Days Worked</th>
-                <th scope="col">Daily Rate</th>
-                <th scope="col">Gross Pay</th>
-                <th scope="col">Deduction Amount</th>
-                <th scope="col">Net Pay</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
+          <div class="table-wrapper">
+            <table id="table--payroll-table" class="table">
+              <thead>
+                <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Employee Name</th>
+                  <th scope="col">Days Worked</th>
+                  <th scope="col">Daily Rate</th>
+                  <th scope="col">Gross Pay</th>
+                  <th scope="col">Deduction Amount</th>
+                  <th scope="col">Net Pay</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
 
-          <form id="form--delete-entry" autocomplete="off">
+          <form
+            id="form--delete-entry"
+            class="card--ghost my-4"
+            autocomplete="off"
+          >
             <label for="delete-line-number">Delete Line Number</label>
 
-            <input
-              type="number"
-              name="delete-line-number"
-              id="delete-line-number"
-              class="card p-2"
-            />
-            <button class="button px-4" type="submit">Delete</button>
+            <div class="mt-2 flex">
+              <input
+                type="number"
+                name="delete-line-number"
+                id="delete-line-number"
+                class="card p-2 mr-2"
+              />
+              <button class="button px-4" type="submit">Delete</button>
+            </div>
           </form>
         </section>
       </section>
